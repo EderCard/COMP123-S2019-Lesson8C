@@ -68,7 +68,8 @@
             this.NameTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.NameTextBox.Name = "NameTextBox";
             this.NameTextBox.Size = new System.Drawing.Size(257, 38);
-            this.NameTextBox.TabIndex = 2;
+            this.NameTextBox.TabIndex = 1;
+            this.NameTextBox.TextChanged += new System.EventHandler(this.NameTextBox_TextChanged);
             // 
             // AgeTextBox
             // 
@@ -77,7 +78,7 @@
             this.AgeTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.AgeTextBox.Name = "AgeTextBox";
             this.AgeTextBox.Size = new System.Drawing.Size(257, 38);
-            this.AgeTextBox.TabIndex = 5;
+            this.AgeTextBox.TabIndex = 2;
             this.AgeTextBox.TextChanged += new System.EventHandler(this.AgeTextBox_TextChanged);
             // 
             // AgeLabel
@@ -114,7 +115,7 @@
             this.SubmitButton.Margin = new System.Windows.Forms.Padding(2);
             this.SubmitButton.Name = "SubmitButton";
             this.SubmitButton.Size = new System.Drawing.Size(130, 43);
-            this.SubmitButton.TabIndex = 7;
+            this.SubmitButton.TabIndex = 3;
             this.SubmitButton.Text = "Submit";
             this.SubmitButton.UseVisualStyleBackColor = true;
             this.SubmitButton.Click += new System.EventHandler(this.SubmitButton_Click);

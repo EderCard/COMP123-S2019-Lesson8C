@@ -32,9 +32,16 @@ namespace COMP123_S2019_Lesson8C
             UserAge = float.Parse(AgeTextBox.Text);
 
             OutputLabel.Text = NameTextBox.Text + " " + AgeTextBox.Text;
-
+            ClearForm();
+        }
+        /// <summary>
+        /// This method clears the TextBoxes on the form and other proporties
+        /// </summary>
+        private void ClearForm()
+        {
             NameTextBox.Text = string.Empty;
             AgeTextBox.Text = string.Empty;
+            SubmitButton.Enabled = false;
         }
         /// <summary>
         /// This is the Event Handler for the Lab8Form load event
@@ -43,11 +50,33 @@ namespace COMP123_S2019_Lesson8C
         /// <param name="e"></param>
         private void Lab8Form_Load(object sender, EventArgs e)
         {
-            SubmitButton.Enabled = false;
+            ClearForm();
         }
+        /// <summary>
+        /// This is the Event Handler for the AgeTextBox TextChanged event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void AgeTextBox_TextChanged(object sender, EventArgs e)
         {
-            SubmitButton.Enabled = true;
+            try
+            {
+                float.Parse(AgeTextBox.Text);
+                SubmitButton.Enabled = true;
+            }
+            catch 
+            {
+                SubmitButton.Enabled = false;
+            }
+        }
+        /// <summary>
+        /// This is the Event Handler for the NameTextBox TextChanged event
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void NameTextBox_TextChanged(object sender, EventArgs e)
+        {
+            SubmitButton.Enabled = (NameTextBox.Text.Length >= 2) ? true : false;
         }
     }
 }
